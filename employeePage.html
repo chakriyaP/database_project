@@ -1,109 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>พนังงาน</title>
-    <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-    crossorigin="anonymous"
-  />
-  <script
-    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"
-  ></script>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap"
-    rel="stylesheet"
-  />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet" />
     <style>
-      .input-group {
-        top: 40px;
-        width: auto;
-        border: none;
-      }
-      .unity-input .form-control {
-        border-right: 0 !important;
-      }
-      .unity-input .input-group-addon {
-        background: white !important;
-        border-left: none !important;
-        font-weight: bold;
-        color: #333;
-      }
+        .input-group {
+            top: 40px;
+            width: auto;
+            border: none;
+        }
+        
+        .unity-input .form-control {
+            border-right: 0 !important;
+        }
+        
+        .unity-input .input-group-addon {
+            background: white !important;
+            border-left: none !important;
+            font-weight: bold;
+            color: #333;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarTogglerDemo01"
-        aria-controls="navbarTogglerDemo01"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand font-weight-bold" href="./index.html">
-          <img
-            src="./assets/image/logo.jpg"
-            width="30"
-            height="30"
-            class="d-inline-block align-top"
-            alt=""
-            loading="lazy"
-          />
-          พลังรักสปอร์ต
-        </a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand font-weight-bold" href="./index.html">
+                <img src="./assets/image/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy" /> พลังรักสปอร์ต
+            </a>
 
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="./orderPage.html"
-              >รายการการสั่งซื้อ <span class="sr-only">(current)</span></a
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./orderPage.html">รายการการสั่งซื้อ <span class="sr-only">(current)</span></a
             >
           </li>
 
           <li class="nav-item">
             <a class="nav-link" href="./employeePage.html">พนักงาน</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./customersPage.html">ลูกค้า</a>
-          </li>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./customersPage.html">ลูกค้า</a>
+                </li>
 
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-             
-              id="navbarDropdownMenuLink"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               stock สินค้า
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="./stock.html">สินค้า</a>
-              <a class="dropdown-item" href="./printPatternPage.html">แบบพิมพ์</a>
-            </div>
-          </li>
-        </ul>
-      </div>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="./stock.html">สินค้า</a>
+                        <a class="dropdown-item" href="./printPatternPage.html">แบบพิมพ์</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </nav>
     <!-- <h1>พนังงาน</h1>
     <div class="input-group unity-input">
@@ -121,51 +81,33 @@
             <span class="input-group-text"> m </span>
         </div>
      </div> -->
-     <div
-     class="container-fluid d-flex flex-column justify-content-center align-items-center mt-3"
-   >
-     <h4 class="font-weight-bold">รายการการสั่งซื้อสินค้า (Order)</h4>
-     <div class="card container-fluid">
-       <div class="row d-flex flex-row align-items-center mt-3">
-         <div class="col-8">
-           <div
-             class="container-fluid d-flex flex-row align-items-center mt-3"
-           >
-             <div class="dropdown">
-               <button
-                 type="button"
-                 class="btn btn-info dropdown-toggle"
-                 data-toggle="dropdown"
-                 aria-haspopup="true"
-                 aria-expanded="false"
-               >
+    <div class="container-fluid d-flex flex-column justify-content-center align-items-center mt-3">
+        <h4 class="font-weight-bold">รายการการสั่งซื้อสินค้า (Order)</h4>
+        <div class="card container-fluid">
+            <div class="row d-flex flex-row align-items-center mt-3">
+                <div class="col-8">
+                    <div class="container-fluid d-flex flex-row align-items-center mt-3">
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                  ค้นหาด้วย
                </button>
-               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                 <a class="dropdown-item" href="#">รหัสคำสั่งซื้อ</a>
-                 <a class="dropdown-item" href="#">ชื่อสินค้า</a>
-                 <a class="dropdown-item" href="#">จำนวนสินค้าที่สั่งซื้อ</a>
-                 <a class="dropdown-item" href="#">ประเภทผ้า</a>
-                 <a class="dropdown-item" href="#">สีผ้า</a>
-                 <a class="dropdown-item" href="#">Size</a>
-                 <a class="dropdown-item" href="#">ลายสกรีนผ้า</a>
-                 <a class="dropdown-item" href="#">ราคาสินค้า</a>
-               
-               </div>
-             </div>
-             <div class="input-group ml-2 mr-2">
-               <input
-                 type="text"
-                 class="form-control"
-                 placeholder="ค้นหา"
-                 aria-describedby="basic-addon2"
-               />
-             </div>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">รหัสคำสั่งซื้อ</a>
+                                <a class="dropdown-item" href="#">ชื่อสินค้า</a>
+                                <a class="dropdown-item" href="#">จำนวนสินค้าที่สั่งซื้อ</a>
+                                <a class="dropdown-item" href="#">ประเภทผ้า</a>
+                                <a class="dropdown-item" href="#">สีผ้า</a>
+                                <a class="dropdown-item" href="#">Size</a>
+                                <a class="dropdown-item" href="#">ลายสกรีนผ้า</a>
+                                <a class="dropdown-item" href="#">ราคาสินค้า</a>
 
-             <button
-               type="button"
-               class="btn btn-outline-info d-flex flex-row justify-content-center align-items-center"
-             >
+                            </div>
+                        </div>
+                        <div class="input-group ml-2 mr-2">
+                            <input type="text" class="form-control" placeholder="ค้นหา" aria-describedby="basic-addon2" />
+                        </div>
+
+                        <button type="button" class="btn btn-outline-info d-flex flex-row justify-content-center align-items-center">
                ค้นหา
                <svg
                  width="1em"
@@ -185,7 +127,7 @@
                  />
                </svg>
              </button>
-             <button type="button" class="btn btn-info ml-2">
+                        <button type="button" class="btn btn-info ml-2">
                <svg
                  width="1em"
                  height="1em"
@@ -200,27 +142,12 @@
                  />
                </svg>
              </button>
-           </div>
-         </div>
-         <div class="col-4">
-           <div
-             class="container-fluid d-flex flex-row-reverse align-items-center mt-3"
-           >
-             <a
-               href="./add_orders.html"
-               class="btn btn-outline-success"
-               tabindex="-1"
-               role="button"
-               aria-disabled="true"
-             >
-               <svg
-                 width="1.5em"
-                 height="1.5em"
-                 viewBox="0 0 16 16"
-                 class="bi bi-plus-circle mr-1"
-                 fill="currentColor"
-                 xmlns="http://www.w3.org/2000/svg"
-               >
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="container-fluid d-flex flex-row-reverse align-items-center mt-3">
+                        <a href="./add_orders.html" class="btn btn-outline-success" tabindex="-1" role="button" aria-disabled="true">
+                            <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-plus-circle mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                  <path
                    fill-rule="evenodd"
                    d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
@@ -230,21 +157,14 @@
                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
                  />
                  </svg>เพิ่มรายการสินค้า
-                 </a>
-           </div>
-         </div>
-       </div>
-     <input style="padding-right:80px;" value="50"></input><span style="margin-left:-50px;">บาท/ปี</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <input style="padding-right:80px;" value="50"></input><span style="margin-left:-50px;">บาท/ปี</span>
 
-     <th>
-      <svg
-        width="1.5em"
-        height="1.5em"
-        viewBox="0 0 16 16"
-        class="bi bi-pencil-square"
-        fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+            <th>
+                <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"
         />
@@ -253,16 +173,9 @@
           d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"
         />
       </svg>
-    </th>
-    <th>
-      <svg
-        width="1.5em"
-        height="1.5em"
-        viewBox="0 0 16 16"
-        class="bi bi-trash"
-        fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+            </th>
+            <th>
+                <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"
         />
@@ -271,6 +184,7 @@
           d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
         />
       </svg>
-    </th>
-  </body>
+            </th>
+</body>
+
 </html>
