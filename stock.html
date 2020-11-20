@@ -47,6 +47,7 @@
         </ul>
       </div>
     </nav>
+    
     <div
       class="bg-light card-body container-fluid d-flex flex-column justify-content-center align-items-center"
     >
@@ -60,6 +61,7 @@
         <button
           type="button"
           class="btn btn-outline-success col-4 mt-2 d-flex flex-row justify-content-center align-items-center font-weight-bold"
+          id="add-stock"
         >
           <svg
             width="1.5em"
@@ -180,4 +182,10 @@
       </div>
     </div>
   </body>
+  <script>
+    const addStock = document.querySelector("#add-stock");
+    addStock.addEventListener("click", (e) => {
+      idCarSignin.style.display = "none";
+    });
+  </script>
 </html>
