@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>stock ผ้า</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -12,24 +12,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet" />
 </head>
 
-<body>
+<body style="font-family: 'Kanit', sans-serif">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <span class="navbar-toggler-icon"></span>
+      </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <a class="navbar-brand font-weight-bold" href="./index.html">
                 <img src="./assets/image/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy" /> พลังรักสปอร์ต
             </a>
-
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
                     <a class="nav-link" href="./orderPage.html">รายการการสั่งซื้อ <span class="sr-only">(current)</span></a
-              >
-            </li>
-  
-            <li class="nav-item">
-              <a class="nav-link" href="./employeePage.html">พนักงาน</a>
+            >
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./employeePage.html">พนักงาน</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./customersPage.html">ลูกค้า</a>
@@ -37,17 +36,148 @@
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                stock สินค้า
-              </a>
+              stock สินค้า
+            </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="./stock.html">สินค้า</a>
-                        <a class="dropdown-item" href="./printPatternPage.html">แบบพิมพ์</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
+                        <a class="dropdown-item" href="./printPatternPage.html">แบบพิมพ์</a
+              >
+            </div>
+          </li>
+        </ul>
+      </div>
     </nav>
-    <h1>stock ผ้า</h1>
-</body>
+    <div
+      class="bg-light card-body container-fluid d-flex flex-column justify-content-center align-items-center"
+    >
+      <div
+        class="container-fluid bg-white d-flex flex-row justify-content-center align-items-center border-bottom row"
+      >
+        <h4 class="container-fluid mt-4 col-8 font-weight-bold">
+          เลือกรายการ stock สินค้า
+        </h4>
 
+        <button
+          type="button"
+          class="btn btn-outline-success col-4 mt-2 d-flex flex-row justify-content-center align-items-center font-weight-bold"
+        >
+          <svg
+            width="1.5em"
+            height="1.5em"
+            viewBox="0 0 16 16"
+            class="bi bi-plus-circle mr-4"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+            />
+            <path
+              fill-rule="evenodd"
+              d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+            />
+          </svg>
+          เพิ่ม stock สินค้า
+        </button>
+        <form>
+          <table class="table text-center shadow-lg mt-2">
+            <thead class="thead-light">
+              <tr>
+                <th>
+                  <div class="form-group text-left">
+                    <label for="color-stock">สี</label>
+                    <input
+                      class="form-control"
+                      id="color-stock"
+                      placeholder="ทั้งหมด"
+                    />
+                  </div>
+                </th>
+                <th>
+                  <div class="form-group text-left">
+                    <label for="amount">จำนวน</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="amount"
+                      placeholder="ทั้งหมด"
+                    />
+                  </div>
+                </th>
+              </tr>
+            </thead>
+          </table>
+          <div
+            class="container-fluid d-flex flex-row justify-content-center align-items-center"
+          >
+            <button
+              type="submit"
+              class="btn btn-lg btn-primary mr-2 d-flex flex-row justify-content-center align-items-center"
+              disabled
+            >
+              ค้นหา
+              <svg
+                width="1em"
+                height="1em"
+                viewBox="0 0 16 16"
+                class="bi bi-search ml-2"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"
+                />
+              </svg>
+            </button>
+            <button type="reset" class="btn btn-secondary btn-lg" disabled>
+              ยกเลิก
+            </button>
+          </div>
+        </form>
+      </div>
+      <div
+        class="card-body container-fluid bg-white d-flex flex-column justify-content-center align-items-center"
+      >
+        <h4 class="container-fluid font-weight-bold border-bottom">
+          รายการการสั่งซื้อสินค้า
+        </h4>
+        <table class="table bg-light text-center shadow-lg mt-2">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">สี</th>
+              <th scope="col">จำนวน</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">แดง</th>
+              <td>89%</td>
+            </tr>
+            <tr>
+              <th scope="row">เหลืองรักพ่อ</th>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <th scope="row">ส้มพวกล้ม</th>
+              <td>90%</td>
+            </tr>
+            <tr>
+              <th scope="row">ฟ้า</th>
+              <td>20%</td>
+            </tr>
+            <tr>
+              <th scope="row">KL58947</th>
+              <td>C78</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
 </html>
