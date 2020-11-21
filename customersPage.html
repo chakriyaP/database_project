@@ -181,7 +181,7 @@
 
         <div class="card-body container-fluid bg-white d-flex flex-column justify-content-center align-items-center">
             <h4 class="container-fluid font-weight-bold border-bottom ">รายการข้อมูลลูกค้า</h4>
-            <table class="table  bg-light text-center shadow-lg mt-2">
+            <table class="table  bg-light text-center shadow-lg mt-2" id="customersTable">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">รหัสสมาชิกลูกค้า</th>
@@ -190,55 +190,13 @@
                         <th scope="col">ที่อยู่จัดส่ง</th>
                         <th scope="col">เบอร์โทรศัพท์</th>
                         <th scope="col">ID Line</th>
+                        <th scope="col">แก้ไข</th>
+                        <th scope="col">ลบ</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">AA12345</th>
-                        <td>สมใจ</td>
-                        <td>เรียนเก่ง</td>
-                        <td>ขอนแก่น</td>
-                        <td>xxx-xxx-xxxx</td>
-                        <td>@a1234</td>
-
-                    </tr>
-                    <tr>
-                        <th scope="row">AB54321</th>
-                        <td>สมหวัง</td>
-                        <td>เรียนดี</td>
-                        <td>ขอนแก่น</td>
-                        <td>xxx-xxx-xxxx</td>
-                        <td>@b1234</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">BD15486</th>
-                        <td>สมพงษ์</td>
-                        <td>เรียนไหว</td>
-                        <td>อุดรธานี</td>
-                        <td>xxx-xxx-xxxx</td>
-                        <td>@c1234</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">MN56897</th>
-                        <td>สมพร</td>
-                        <td>เรียนขยัน</td>
-                        <td>อุดรธานี</td>
-                        <td>xxx-xxx-xxxx</td>
-                        <td>@d1234</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">KL58947</th>
-                        <td>สมศรี</td>
-                        <td>เรียนรวม</td>
-                        <td>บุรีรัมย์</td>
-                        <td>xxx-xxx-xxxx</td>
-                        <td>@e1234</td>
-                    </tr>
+                <tbody id="customers-tbody">
                 </tbody>
-
-
             </table>
-
         </div>
     </div>
     </div>
@@ -250,6 +208,21 @@
 
     const showSearch = document.querySelector(".showSearch");
     const showInsert = document.querySelector(".showInsert");
+    const stockTable = document.querySelector("#stock-table");
+
+
+    const customersTable = document.querySelector("#customers-table")
+    const customersTbody = document.querySelector('#customers-tbody')
+
+    const deleteButton = `<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+              </svg>`;
+    const editButton = `<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+              </svg>`;
+
 
     showSearch.style.display = "block";
     showInsert.style.display = "none";
@@ -264,6 +237,36 @@
         showSearch.style.display = "block";
         showInsert.style.display = "none";
     });
+
+    const showTbody = (data) => {
+        data.forEach(ele => {
+            const tr = document.createElement('tr');
+            console.log(ele);
+            // console.log(c_id);
+            const listData = `<th scope="row">${ele.c_id}</th>
+                        <td>${ele.fname}</td>
+                        <td>${ele.lname}</td>
+                        <td>${ele.customers_address}</td>
+                        <td>${ele.phone}</td>
+                        <td>${ele.id_line}</td>
+                        <td>${editButton}</td>
+                        <td>${deleteButton}</td>`
+
+            tr.innerHTML = listData
+            customersTbody.appendChild(tr)
+        });
+    }
+
+
+    fetch("http://localhost:3000/customers")
+        .then((res) => {
+            return res.json();
+        }).then((data) => {
+            console.log(data);
+            showTbody(data)
+        }).catch(err => {
+            console.log(err.message);
+        })
 </script>
 
 </html>
