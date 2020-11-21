@@ -52,7 +52,7 @@
         <div class="container-fluid bg-white d-flex flex-row justify-content-center align-items-center border-bottom row">
             <h4 class="container-fluid mt-4 col-8 font-weight-bold">เลือกดูข้อมูลลูกค้า (Customers)</h4>
 
-            <button type="button" class="btn btn-outline-success col-4 mt-2  d-flex flex-row justify-content-center align-items-center font-weight-bold">
+            <button id="add-customer" type="button" class="btn btn-outline-success col-4 mt-2  d-flex flex-row justify-content-center align-items-center font-weight-bold">
                 
                 <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-plus-circle mr-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -62,7 +62,7 @@
             </button>
         </div>
 
-        <form>
+        <form class="showSearch container-fluid">
             <table class="table text-center shadow-lg mt-2">
                 <thead class="thead-light">
                     <tr>
@@ -74,8 +74,14 @@
                         </th>
                         <th>
                             <div class="form-group text-left">
-                                <label for="name">ชื่อ-นามสกุล</label>
-                                <input class="form-control" id="name" placeholder="ทั้งหมด">
+                                <label for="fname">ชื่อ</label>
+                                <input class="form-control" id="fname" placeholder="ทั้งหมด">
+                            </div>
+                        </th>
+                        <th>
+                            <div class="form-group text-left">
+                                <label for="lname">นามสกุล</label>
+                                <input class="form-control" id="lname" placeholder="ทั้งหมด">
                             </div>
                         </th>
                         <th>
@@ -100,7 +106,7 @@
                 </thead>
             </table>
             <div class="container-fluid d-flex flex-row justify-content-center align-items-center ">
-                <button type="submit" class="btn btn-lg btn-primary mr-2 d-flex flex-row justify-content-center align-items-center" disabled> ค้นหา
+                <button type="submit" class="btn btn-lg btn-primary mr-2 d-flex flex-row justify-content-center align-items-center"> ค้นหา
                   <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search ml-2" fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"
@@ -109,7 +115,67 @@
                       d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
                   </svg>
               </button>
-                <button type="reset" class="btn btn-secondary btn-lg" disabled>ยกเลิก</button>
+                <button type="reset" class="btn btn-secondary btn-lg">ยกเลิก</button>
+            </div>
+        </form>
+
+        <form class="showInsert container-fluid">
+            <h2 class="container-fluid mt-4 col-8 font-weight-bold text-center">
+                เพิ่มข้อมูลลูกค้า
+            </h2>
+            <table class="table text-center shadow-lg mt-2">
+                <thead class="thead-white">
+                    <tr>
+                        <th>
+                            <div class="form-group text-left">
+                                <label for="id-customer-insert">รหัสสมาชิกลูกค้า</label>
+                                <input class="form-control" id="id-customer-insert" placeholder="ทั้งหมด">
+                            </div>
+                        </th>
+                        <th>
+                            <div class="form-group text-left">
+                                <label for="fname-insert">ชื่อ</label>
+                                <input class="form-control" id="fname-insert" placeholder="ทั้งหมด">
+                            </div>
+                        </th>
+                        <th>
+                            <div class="form-group text-left">
+                                <label for="lname-insert">นามสกุล</label>
+                                <input class="form-control" id="lname-insert" placeholder="ทั้งหมด">
+                            </div>
+                        </th>
+                        <th>
+                            <div class="form-group text-left">
+                                <label for="address-insert">ที่อยู่จัดส่ง</label>
+                                <input class="form-control" id="address-insert" placeholder="ทั้งหมด">
+                            </div>
+                        </th>
+                        <th>
+                            <div class="form-group text-left">
+                                <label for="phone-number-insert">เบอร์โทรศัพท์</label>
+                                <input type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="form-control" id="phone-number-insert" placeholder="ทั้งหมด">
+                            </div>
+                        </th>
+                        <th>
+                            <div class="form-group text-left">
+                                <label for="id-line-insert">ID Line</label>
+                                <input class="form-control" id="id-line-insert" placeholder="ทั้งหมด">
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+            <div class="container-fluid d-flex flex-row justify-content-center align-items-center ">
+                <button type="submit" class="btn btn-lg btn-primary mr-2 d-flex flex-row justify-content-center align-items-center"> เพิ่มข้อมูลลูกค้า
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search ml-2" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                      d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                    <path fill-rule="evenodd"
+                      d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                  </svg>
+              </button>
+                <button type="reset" class="btn btn-secondary btn-lg">ยกเลิกการเพิ่มข้อมูลลูกค้า</button>
             </div>
         </form>
 
@@ -119,7 +185,8 @@
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">รหัสสมาชิกลูกค้า</th>
-                        <th scope="col">ชื่อ-นามสกุล</th>
+                        <th scope="col">ชื่อ</th>
+                        <th scope="col">นามสกุล</th>
                         <th scope="col">ที่อยู่จัดส่ง</th>
                         <th scope="col">เบอร์โทรศัพท์</th>
                         <th scope="col">ID Line</th>
@@ -128,7 +195,8 @@
                 <tbody>
                     <tr>
                         <th scope="row">AA12345</th>
-                        <td>สมใจ เรียนเก่ง</td>
+                        <td>สมใจ</td>
+                        <td>เรียนเก่ง</td>
                         <td>ขอนแก่น</td>
                         <td>xxx-xxx-xxxx</td>
                         <td>@a1234</td>
@@ -136,28 +204,32 @@
                     </tr>
                     <tr>
                         <th scope="row">AB54321</th>
-                        <td>สมหวัง เรียนดี</td>
+                        <td>สมหวัง</td>
+                        <td>เรียนดี</td>
                         <td>ขอนแก่น</td>
                         <td>xxx-xxx-xxxx</td>
                         <td>@b1234</td>
                     </tr>
                     <tr>
                         <th scope="row">BD15486</th>
-                        <td>สมพงษ์ เรียนไหว</td>
+                        <td>สมพงษ์</td>
+                        <td>เรียนไหว</td>
                         <td>อุดรธานี</td>
                         <td>xxx-xxx-xxxx</td>
                         <td>@c1234</td>
                     </tr>
                     <tr>
                         <th scope="row">MN56897</th>
-                        <td>สมพร เรียนขยัน</td>
+                        <td>สมพร</td>
+                        <td>เรียนขยัน</td>
                         <td>อุดรธานี</td>
                         <td>xxx-xxx-xxxx</td>
                         <td>@d1234</td>
                     </tr>
                     <tr>
                         <th scope="row">KL58947</th>
-                        <td>สมศรี เรียนรวม</td>
+                        <td>สมศรี</td>
+                        <td>เรียนรวม</td>
                         <td>บุรีรัมย์</td>
                         <td>xxx-xxx-xxxx</td>
                         <td>@e1234</td>
@@ -166,9 +238,32 @@
 
 
             </table>
+
         </div>
     </div>
     </div>
 </body>
+
+<script>
+    // เลือกปุ่มกดมา
+    const addStockButton = document.querySelector("#add-customer");
+
+    const showSearch = document.querySelector(".showSearch");
+    const showInsert = document.querySelector(".showInsert");
+
+    showSearch.style.display = "block";
+    showInsert.style.display = "none";
+
+    addStockButton.addEventListener("click", (e) => {
+        showSearch.style.display = "none";
+        showInsert.style.display = "block";
+    });
+
+    showInsert.addEventListener("reset", (e) => {
+        e.preventDefault();
+        showSearch.style.display = "block";
+        showInsert.style.display = "none";
+    });
+</script>
 
 </html>
