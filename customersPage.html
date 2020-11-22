@@ -15,7 +15,7 @@
 <body style="font-family: 'Kanit', sans-serif">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <a class="navbar-brand font-weight-bold" href="./index.html">
@@ -24,12 +24,12 @@
 
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="./orderPage.html">รายการการสั่งซื้อ <span class="sr-only">(current)</span></a
-              >
-            </li>
-  
-            <li class="nav-item">
-              <a class="nav-link" href="./employeePage.html">พนักงาน</a>
+                    <a class="nav-link" href="./orderPage.html">รายการการสั่งซื้อ <span
+                            class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="./employeePage.html">พนักงาน</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./customersPage.html">ลูกค้า</a>
@@ -37,8 +37,8 @@
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                stock สินค้า
-              </a>
+                        stock สินค้า
+                    </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="./stock.html">สินค้า</a>
                         <a class="dropdown-item" href="./printPatternPage.html">แบบพิมพ์</a>
@@ -53,10 +53,13 @@
             <h4 class="container-fluid mt-4 col-8 font-weight-bold">เลือกดูข้อมูลลูกค้า (Customers)</h4>
 
             <button id="add-customer" type="button" class="btn btn-outline-success col-4 mt-2  d-flex flex-row justify-content-center align-items-center font-weight-bold">
-                
-                <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-plus-circle mr-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+
+                <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-plus-circle mr-4" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path fill-rule="evenodd"
+                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                 </svg>
                 เพิ่มข้อมูลลูกค้า
             </button>
@@ -69,37 +72,37 @@
                         <th>
                             <div class="form-group text-left">
                                 <label for="id-customer">รหัสสมาชิกลูกค้า</label>
-                                <input class="form-control" id="id-customer" placeholder="ทั้งหมด">
+                                <input class="form-control" id="id-customer" name="c_id" placeholder="ทั้งหมด">
                             </div>
                         </th>
                         <th>
                             <div class="form-group text-left">
                                 <label for="fname">ชื่อ</label>
-                                <input class="form-control" id="fname" placeholder="ทั้งหมด">
+                                <input class="form-control" id="fname" name="fname" placeholder="ทั้งหมด">
                             </div>
                         </th>
                         <th>
                             <div class="form-group text-left">
                                 <label for="lname">นามสกุล</label>
-                                <input class="form-control" id="lname" placeholder="ทั้งหมด">
+                                <input class="form-control" id="lname" name="lname" placeholder="ทั้งหมด">
                             </div>
                         </th>
                         <th>
                             <div class="form-group text-left">
                                 <label for="address">ที่อยู่จัดส่ง</label>
-                                <input class="form-control" id="address" placeholder="ทั้งหมด">
+                                <input class="form-control" id="address" name="customers_address" placeholder="ทั้งหมด">
                             </div>
                         </th>
                         <th>
                             <div class="form-group text-left">
                                 <label for="phone-number">เบอร์โทรศัพท์</label>
-                                <input type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="form-control" id="phone-number" placeholder="ทั้งหมด">
+                                <input type="tel" name="phone" class="form-control" id="phone-number" placeholder="ทั้งหมด">
                             </div>
                         </th>
                         <th>
                             <div class="form-group text-left">
                                 <label for="id-line">ID Line</label>
-                                <input class="form-control" id="id-line" placeholder="ทั้งหมด">
+                                <input class="form-control" id="id-line" name="id_line" placeholder="ทั้งหมด">
                             </div>
                         </th>
                     </tr>
@@ -107,14 +110,14 @@
             </table>
             <div class="container-fluid d-flex flex-row justify-content-center align-items-center ">
                 <button type="submit" class="btn btn-lg btn-primary mr-2 d-flex flex-row justify-content-center align-items-center"> ค้นหา
-                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search ml-2" fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
-                      d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
-                    <path fill-rule="evenodd"
-                      d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
-                  </svg>
-              </button>
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search ml-2" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                        <path fill-rule="evenodd"
+                            d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                    </svg>
+                </button>
                 <button type="reset" class="btn btn-secondary btn-lg">ยกเลิก</button>
             </div>
         </form>
@@ -166,15 +169,16 @@
                 </thead>
             </table>
             <div class="container-fluid d-flex flex-row justify-content-center align-items-center ">
-                <button type="submit" class="btn btn-lg btn-primary mr-2 d-flex flex-row justify-content-center align-items-center"> เพิ่มข้อมูลลูกค้า
-                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search ml-2" fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
-                      d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
-                    <path fill-rule="evenodd"
-                      d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
-                  </svg>
-              </button>
+                <button type="submit" class="btn btn-lg btn-primary mr-2 d-flex flex-row justify-content-center align-items-center">
+                    เพิ่มข้อมูลลูกค้า
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search ml-2" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                        <path fill-rule="evenodd"
+                            d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                    </svg>
+                </button>
                 <button type="reset" class="btn btn-secondary btn-lg">ยกเลิกการเพิ่มข้อมูลลูกค้า</button>
             </div>
         </form>
@@ -213,14 +217,14 @@
     const customersTable = document.querySelector("#customers-table")
     const customersTbody = document.querySelector('#customers-tbody')
 
-    const deleteButton = `<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    const deleteButton = ` <button id="btDelete" style="border: none;"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+  <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+</svg></button>`;
+    const editButton = ` <button id="btEdit" style="border: none;"> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-              </svg>`;
-    const editButton = `<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-              </svg>`;
+              </svg></button>`;
 
 
     showSearch.style.display = "block";
@@ -238,22 +242,70 @@
     });
 
     const showTbody = (data) => {
+        customersTbody.innerHTML = "";
+
         data.forEach(ele => {
             const tr = document.createElement('tr');
-            console.log(ele);
-            // console.log(c_id);
+            //เพิ่ม
+            const tdDelete = document.createElement("td");
+            const tdEdit = document.createElement("td")
+
             const listData = `<th scope="row">${ele.c_id}</th>
                         <td>${ele.fname}</td>
                         <td>${ele.lname}</td>
                         <td>${ele.customers_address}</td>
                         <td>${ele.phone}</td>
                         <td>${ele.id_line}</td>
-                        <td>${editButton}</td>
-                        <td>${deleteButton}</td>`
+                       `
 
             tr.innerHTML = listData
+                //เพิ่ม
+            tdEdit.innerHTML = editButton;
+            tdDelete.innerHTML = deleteButton;
+            tr.appendChild(tdEdit);
+            tr.appendChild(tdDelete);
+
             customersTbody.appendChild(tr)
         });
+    }
+
+    // Search เอาค่าที่อยู่ใน form มาก่อน
+    showSearch.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const input = showSearch.elements;
+
+        let objSearch = {};
+
+        for (const ele of input) {
+            const inputValue = ele.value;
+            const inputName = ele.name;
+            objSearch[inputName] = inputValue;
+        }
+        delete objSearch[""];
+
+        searchFetch(objSearch);
+    });
+
+    //เพิ่ม
+    function searchFetch(objSearch) {
+        fetch("http://localhost:3000/customers", {
+                method: "POST",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(objSearch),
+            })
+            .then((res) => {
+                return res.json();
+            })
+            .then((data) => {
+                console.log(data);
+                showTbody(data);
+            })
+            .catch((err) => {
+                console.log(err.message);
+            });
     }
 
 
@@ -261,7 +313,6 @@
         .then((res) => {
             return res.json();
         }).then((data) => {
-            console.log(data);
             showTbody(data)
         }).catch(err => {
             console.log(err.message);

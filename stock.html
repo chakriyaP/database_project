@@ -230,7 +230,7 @@
             </tr>
           </thead>
           <tbody id="stock-tbody">
-            
+           
           </tbody>
         </table>
       </div>
@@ -283,24 +283,58 @@
         const listData = `<th scope="row">${ele.color}</th>
                         <td>${ele.amount_stock}</td>`;
         
+
         tr.innerHTML = listData;
         tdEdit.innerHTML = editButton;
         tdDelete.innerHTML =  deleteButton;
         tr.appendChild(tdEdit);
         tr.appendChild(tdDelete);
 
+        const trEdit = document.createElement("tr");
+        const edit = ` <tr>
+              <td><div class="form-group text-left">
+                <label for="color-stock">สี</label>
+                <input
+                  class="form-control"
+                  id="color-stock"
+                  name="color"
+                  placeholder="${ele.color}"
+                />
+              </div></td>
+              <td><div class="form-group text-left">
+                <label for="color-stock">จำนวน</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="color-stock"
+                  name="color"
+                  placeholder="${ele.amount_stock}"
+                />
+              </div></td>
+            </tr>`
+        
+        trEdit.innerHTML = edit; 
+        // trEdit.appendChild(tdEdit);
+        // trEdit.appendChild(tdDelete);
+
         stockTbody.appendChild(tr);
+        // stockTbody.appendChild(trEdit);
+       
 
         tdEdit.addEventListener("click", e => { 
-          const trEditFrom = document.createElement("tr");
-          const color = prompt(`ต้องการแก้ไขจากสี ${ele.color} เป็นสีอะไร`);
-          const amount_stock = prompt(`ต้องการแก้ไขจำนวน ${ele.amount_stock} เป็นจำนวนเท่าไหร่`);
-          const update = confirm(`คุณต้องการแก้ไขจากสี ${ele.color} เป็น ${color} และ ${ele.amount_stock} เป็น ${ele.amount_stock} ใช่มั้ย`);
-          if (update == true){
-            // fetch update?
-          } else {
-            alert("ยกเลิกการอัพเดช")
-          }
+          
+       
+          
+          // trEdit.style.display = "inline-block"
+          // const trEditFrom = document.createElement("tr");
+          // const color = prompt(`ต้องการแก้ไขจากสี ${ele.color} เป็นสีอะไร`);
+          // const amount_stock = prompt(`ต้องการแก้ไขจำนวน ${ele.amount_stock} เป็นจำนวนเท่าไหร่`);
+          // const update = confirm(`คุณต้องการแก้ไขจากสี ${ele.color} เป็น ${color} และ ${ele.amount_stock} เป็น ${ele.amount_stock} ใช่มั้ย`);
+          // if (update == true){
+          //   // fetch update?
+          // } else {
+          //   alert("ยกเลิกการอัพเดช")
+          // }
         })
         
         tdDelete.addEventListener("click", e => {
