@@ -147,64 +147,64 @@
                             <th>
                                 <div class="form-group text-left">
                                     <label for="id-order-insert">รหัสคำสั่งซื้อ</label>
-                                    <input class="form-control" id="id-order-insert" placeholder="ทั้งหมด">
+                                    <input class="form-control" name="order_id" id="id-order-insert" placeholder="ทั้งหมด">
                                 </div>
                             </th>
                             <th>
                                 <div class="form-group text-left">
                                     <label for="id-customer-insert">รหัสลูกค้า</label>
-                                    <input class="form-control" id="id-customer-insert" placeholder="ทั้งหมด">
+                                    <input class="form-control" name="ocid" id="id-customer-insert" placeholder="ทั้งหมด">
                                 </div>
                             </th>
                             <th>
                                 <div class="form-group text-left">
                                     <label for="amount-insert">จำนวน</label>
-                                    <input type="number" class="form-control" id="amount-insert" placeholder="ทั้งหมด">
+                                    <input type="number" name="order_amount" class="form-control" id="amount-insert" placeholder="ทั้งหมด">
                                 </div>
                             </th>
                             <th>
                                 <div class="form-group text-left">
                                     <label for="color">size</label>
-                                    <input class="form-control" id="color" placeholder="ทั้งหมด">
+                                    <input class="form-control" name="size" id="color" placeholder="ทั้งหมด">
                                 </div>
                             </th>
                             <th>
                                 <div class="form-group text-left">
                                     <label for="color-insert">สีผ้า</label>
-                                    <input class="form-control" id="color-insert" placeholder="ทั้งหมด">
+                                    <input class="form-control" name="bcolor" id="color-insert" placeholder="ทั้งหมด">
                                 </div>
                             </th>
 
                             <th>
                                 <div class="form-group text-left">
                                     <label for="id-pattern-insert">ลายสกรีนผ้า</label>
-                                    <input class="form-control" id="id-pattern-insert" placeholder="ทั้งหมด">
+                                    <input class="form-control" name="opid" id="id-pattern-insert" placeholder="ทั้งหมด">
                                 </div>
                             </th>
                             <th>
                                 <div class="form-group text-left">
                                     <label for="orderDate-insert">วันที่สั่งลินค้า</label>
-                                    <input type="date" class="form-control" id="orderDate-insert">
+                                    <input type="date" name="o_start_date" class="form-control" id="orderDate-insert">
                                 </div>
                             </th>
                             <th>
                                 <div class="form-group text-left">
                                     <label for="purchaseDate-insert">วันที่ส่งสินค้า</label>
-                                    <input type="date" class="form-control" id="purchaseDate-insert">
+                                    <input type="date" name="o_end_date" class="form-control" id="purchaseDate-insert">
                                 </div>
                             </th>
                         </tr>
                     </thead>
                 </table>
                 <div class="container-fluid d-flex flex-row justify-content-center align-items-center ">
-                    <button type="submit" class="btn btn-lg btn-primary mr-2 d-flex flex-row justify-content-center align-items-center"> เพิ่มรายการสินค้า
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search ml-2" fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
-                            <path fill-rule="evenodd"
-                                d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
-                        </svg>
+                    <button type="submit" class="btn btn-lg btn-primary mr-2 d-flex flex-row justify-content-center align-items-center"> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle mr-2" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path fill-rule="evenodd"
+                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                    </svg> เพิ่มรายการสินค้า
+                       
                     </button>
                     <button type="reset" class="btn btn-secondary btn-lg">ยกเลิกการเพิ่มสินค้า</button>
                 </div>
@@ -474,6 +474,26 @@
             .catch((err) => {
                 console.log(err.message);
             });
+    }
+
+    showInsert.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const input = showInsert.elements;
+
+        let objInsert = {};
+
+        for (const ele of input) {
+            const inputValue = ele.value;
+            const inputName = ele.name;
+            objInsert[inputName] = inputValue;
+        }
+        delete objInsert[""];
+        console.log(objInsert);
+        // searchFetch(objSearch);
+    })
+
+    function insertFetch(objInsert) {
+        // fetch insert
     }
 
     fetch("http://localhost:3000/orders")

@@ -23,15 +23,14 @@
             </a>
 
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="./orderPage.html">รายการการสั่งซื้อ <span
-                            class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="./orderPage.html">รายการการสั่งซื้อ </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="./employeePage.html">พนักงาน</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="./customersPage.html">ลูกค้า</a>
                 </li>
 
@@ -55,12 +54,12 @@
             <button id="add-customer" type="button" class="btn btn-outline-success col-4 mt-2  d-flex flex-row justify-content-center align-items-center font-weight-bold">
 
                 <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-plus-circle mr-4" fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
-                        d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                    <path fill-rule="evenodd"
-                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                </svg>
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                <path fill-rule="evenodd"
+                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+            </svg>
                 เพิ่มข้อมูลลูกค้า
             </button>
         </div>
@@ -132,37 +131,37 @@
                         <th>
                             <div class="form-group text-left">
                                 <label for="id-customer-insert">รหัสสมาชิกลูกค้า</label>
-                                <input class="form-control" id="id-customer-insert" placeholder="ทั้งหมด">
+                                <input class="form-control" id="id-customer-insert" name="c_id" placeholder="ทั้งหมด">
                             </div>
                         </th>
                         <th>
                             <div class="form-group text-left">
                                 <label for="fname-insert">ชื่อ</label>
-                                <input class="form-control" id="fname-insert" placeholder="ทั้งหมด">
+                                <input class="form-control" id="fname-insert" name="fname" placeholder="ทั้งหมด">
                             </div>
                         </th>
                         <th>
                             <div class="form-group text-left">
                                 <label for="lname-insert">นามสกุล</label>
-                                <input class="form-control" id="lname-insert" placeholder="ทั้งหมด">
+                                <input class="form-control" id="lname-insert" name="lname" placeholder="ทั้งหมด">
                             </div>
                         </th>
                         <th>
                             <div class="form-group text-left">
                                 <label for="address-insert">ที่อยู่จัดส่ง</label>
-                                <input class="form-control" id="address-insert" placeholder="ทั้งหมด">
+                                <input class="form-control" id="address-insert" name="customers_address" placeholder="ทั้งหมด">
                             </div>
                         </th>
                         <th>
                             <div class="form-group text-left">
                                 <label for="phone-number-insert">เบอร์โทรศัพท์</label>
-                                <input type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="form-control" id="phone-number-insert" placeholder="ทั้งหมด">
+                                <input type="tel" name="phone" class="form-control" id="phone-number-insert" placeholder="ทั้งหมด">
                             </div>
                         </th>
                         <th>
                             <div class="form-group text-left">
                                 <label for="id-line-insert">ID Line</label>
-                                <input class="form-control" id="id-line-insert" placeholder="ทั้งหมด">
+                                <input class="form-control" id="id-line-insert" name="id_line" placeholder="ทั้งหมด">
                             </div>
                         </th>
                     </tr>
@@ -170,14 +169,14 @@
             </table>
             <div class="container-fluid d-flex flex-row justify-content-center align-items-center ">
                 <button type="submit" class="btn btn-lg btn-primary mr-2 d-flex flex-row justify-content-center align-items-center">
-                    เพิ่มข้อมูลลูกค้า
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search ml-2" fill="currentColor"
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle mr-2" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
-                            d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                            d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                         <path fill-rule="evenodd"
-                            d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
-                    </svg>
+                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                    </svg> เพิ่มข้อมูลลูกค้า
+                   
                 </button>
                 <button type="reset" class="btn btn-secondary btn-lg">ยกเลิกการเพิ่มข้อมูลลูกค้า</button>
             </div>
@@ -225,6 +224,9 @@
                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
               </svg></button>`;
+    const correctButon = `<button style="border: none;"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar2-check-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 3.5c0-.276.244-.5.545-.5h10.91c.3 0 .545.224.545.5v1c0 .276-.244.5-.546.5H2.545C2.245 5 2 4.776 2 4.5v-1zm8.854 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+</svg> </button`;
 
 
     showSearch.style.display = "block";
@@ -244,11 +246,13 @@
     const showTbody = (data) => {
         customersTbody.innerHTML = "";
 
-        data.forEach(ele => {
+        data.forEach((ele, index) => {
             const tr = document.createElement('tr');
             //เพิ่ม
             const tdDelete = document.createElement("td");
             const tdEdit = document.createElement("td")
+            const tdCorrect = document.createElement("td");
+            const tdDeleteEdit = document.createElement("td");
 
             const listData = `<th scope="row">${ele.c_id}</th>
                         <td>${ele.fname}</td>
@@ -265,7 +269,122 @@
             tr.appendChild(tdEdit);
             tr.appendChild(tdDelete);
 
+
+            tdCorrect.innerHTML = correctButon;
+            tdDeleteEdit.innerHTML = deleteButton;
+            const trEdit = document.createElement("tr");
+
+            const edit = `
+              <td><div class="form-group text-left">
+                <label for="color-stock">สี</label>
+                <input
+                  class="color form-control"
+                  name="color"
+                  id="c_id-${index}"
+                  value="${ele.c_id}"
+                />
+              </div></td>
+              <td><div class="form-group text-left">
+                <label for="color-stock">จำนวน</label>
+                <input
+                  class="form-control"
+                  name="amount_stock"
+                  id="fname-${index}"
+                  value="${ele.fname}"
+                />
+              </div></td>
+              <td><div class="form-group text-left">
+                <label for="color-stock">จำนวน</label>
+                <input
+                  class="form-control"
+                  name="amount_stock"
+                  id="lname-${index}"
+                  value="${ele.lname}"
+                />
+              </div></td>
+              <td><div class="form-group text-left">
+                <label for="color-stock">จำนวน</label>
+                <input
+                  class="form-control"
+                  name="amount_stock"
+                  id="customers_address-${index}"
+                  value="${ele.customers_address}"
+                />
+              </div></td>
+              <td><div class="form-group text-left">
+                <label for="color-stock">จำนวน</label>
+                <input
+                  class="form-control"
+                  name="amount_stock"
+                  id="phone-${index}"
+                  value="${ele.phone}"
+                />
+              </div></td>
+              <td><div class="form-group text-left">
+                <label for="color-stock">จำนวน</label>
+                <input
+                  class="form-control"
+                  name="amount_stock"
+                  id="id_line-${index}"
+                  value="${ele.id_line}"
+                />
+              </div></td>
+            `;
+            trEdit.innerHTML = edit;
+            trEdit.appendChild(tdCorrect);
+            trEdit.appendChild(tdDeleteEdit);
+            customersTbody.appendChild(trEdit);
+            trEdit.setAttribute("style", "display:none;");
+
+
             customersTbody.appendChild(tr)
+
+
+            tdEdit.addEventListener("click", (e) => {
+                trEdit.removeAttribute("style");
+                trEdit.className = "bg-info";
+                tr.setAttribute("style", "display:none;");
+
+                tdCorrect.addEventListener("click", (e) => {
+                    tr.removeAttribute("style");
+                    const c_idEdit = document.getElementById(`c_id-${index}`);
+                    const fnameEdit = document.getElementById(
+                        `fname-${index}`
+                    );
+                    const lnameEdit = document.getElementById(
+                        `lname-${index}`
+                    );
+                    const customers_addressEdit = document.getElementById(`customers_address-${index}`);
+                    const phoneEdit = document.getElementById(
+                        `phone-${index}`
+                    );
+                    const id_lineEdit = document.getElementById(
+                        `id_line-${index}`
+                    );
+
+                    let objEdit = {};
+                    objEdit[c_idEdit.name] = c_idEdit.value;
+                    objEdit[fnameEdit.name] = fnameEdit.value;
+                    objEdit[lnameEdit.name] = lnameEdit.value;
+                    objEdit[customers_addressEdit.name] = customers_addressEdit.value;
+                    objEdit[phoneEdit.name] = phoneEdit.value;
+                    objEdit[id_lineEdit.name] = id_lineEdit.value;
+
+                    console.log(objEdit);
+                    // fetch update?          
+                    trEdit.setAttribute("style", "display:none;");
+                });
+            });
+
+            tdDelete.addEventListener("click", (e) => {
+                const deleteItem = confirm(
+                    `คุณต้องการลบรหัสลูกค้า ${ele.c_id} , ชื่อ ${ele.fname} , นามสกุล ${ele.lname} , ที่อยู่จัดส่ง${ele.customers_address} ,  เบอร์โทรศัพท์ ${ele.phone} ,  และ ID LINE ${ele.id_line} `
+                );
+                if (deleteItem == true) {
+                    // fetch delete?
+                    alert("ลบเรียบร้อยแล้ว");
+                }
+            });
         });
     }
 
@@ -308,6 +427,25 @@
             });
     }
 
+    showInsert.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const input = showInsert.elements;
+
+        let objInsert = {};
+
+        for (const ele of input) {
+            const inputValue = ele.value;
+            const inputName = ele.name;
+            objInsert[inputName] = inputValue;
+        }
+        delete objInsert[""];
+        console.log(objInsert);
+        // searchFetch(objSearch);
+    })
+
+    function insertFetch(objInsert) {
+        // fetch insert
+    }
 
     fetch("http://localhost:3000/customers")
         .then((res) => {
