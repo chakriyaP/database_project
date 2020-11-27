@@ -230,7 +230,7 @@
         <label for="color-stock">สี</label>
         <input
           class="color form-control"
-          name="color"
+          name="color_edit"
           id="color-${index}"
           value="${ele.color}"
         />
@@ -240,7 +240,7 @@
         <input
           type="number"
           class="form-control"
-          name="amount_stock"
+          name="amount_stock_edit"
           id="amount_stock-${index}"
           value="${ele.amount_stock}"
         />
@@ -268,10 +268,31 @@
                                 `amount_stock-${index}`
                             );
                             let objEdit = {};
+                            objEdit["color"] = ele.color;
+                            objEdit["amount_stock"] = ele.amount_stock;
                             objEdit[colorEdit.name] = colorEdit.value;
                             objEdit[amountStockEdit.name] = amountStockEdit.value;
                             console.log(objEdit);
-                            // fetch update?          
+
+                            fetch("http://localhost:3000/stock/update", {
+                                    method: "PUT",
+                                    headers: {
+                                        Accept: "application/json",
+                                        "Content-Type": "application/json",
+                                    },
+                                    body: JSON.stringify(objEdit),
+                                })
+                                .then((res) => {
+                                    return res.json();
+                                })
+                                .then((data) => {
+                                    console.log(data);
+                                    showTbody(data);
+
+                                })
+                                .catch((err) => {
+                                    console.log(err.message);
+                                });
                             trEdit.setAttribute("style", "display:none;");
                         });
                     });

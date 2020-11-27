@@ -312,7 +312,7 @@
                             objEdit[empphoneEdit.name] = empphoneEdit.value;
 
                             console.log(objEdit);
-                            // fetch update?          
+
                             trEdit.setAttribute("style", "display:none;");
                         });
                     });
@@ -322,7 +322,24 @@
                             `คุณต้องการลบรหัสพนักงาน ${ele.eid} ,ชื่อพนักงาน ${ele.empname} และเบอร์โทรศัพท์ ${ele.empphone} ใช่มั้ย`
                         );
                         if (deleteItem == true) {
-                            // fetch delete?
+                            fetch("http://localhost:3000/employees/delete", {
+                                    method: "DELETE",
+                                    headers: {
+                                        Accept: "application/json",
+                                        "Content-Type": "application/json",
+                                    },
+                                    body: JSON.stringify(ele),
+                                })
+                                .then((res) => {
+                                    return res.json();
+                                })
+                                .then((data) => {
+                                    console.log(data);
+                                    showTbody(data);
+                                })
+                                .catch((err) => {
+                                    console.log(err.message);
+                                });
                             alert("ลบเรียบร้อยแล้ว");
                         }
                     });

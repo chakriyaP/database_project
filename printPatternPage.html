@@ -194,89 +194,97 @@
 
 
     const showTbody = (data) => {
-        printPatternTbody.innerHTML = "";
+        fetch("http://localhost:3000/printPattern")
+            .then((res) => {
+                return res.json();
+            })
+            .then((data) => {
 
-        data.forEach((ele, index) => {
-            const tr = document.createElement("tr");
+                printPatternTbody.innerHTML = "";
 
-            const tdEdit = document.createElement("td")
-            const tdDelete = document.createElement("td");
-            const tdCorrect = document.createElement("td");
-            const tdDeleteEdit = document.createElement("td");
+                data.forEach((ele, index) => {
+                    const tr = document.createElement("tr");
 
-            const listData = `<th scope="row">${ele.p_id}</th>
-                        <td>${ele.amount_use}</td>`;
+                    const tdEdit = document.createElement("td")
+                    const tdDelete = document.createElement("td");
+                    const tdCorrect = document.createElement("td");
+                    const tdDeleteEdit = document.createElement("td");
 
-            tr.innerHTML = listData;
-            tdEdit.innerHTML = editButton;
-            tdDelete.innerHTML = deleteButton;
-            tr.appendChild(tdEdit);
-            tr.appendChild(tdDelete);
+                    const listData = `<th scope="row">${ele.p_id}</th>
+                                <td>${ele.amount_use}</td>`;
 
-            tdCorrect.innerHTML = correctButon;
-            tdDeleteEdit.innerHTML = deleteButton;
-            const trEdit = document.createElement("tr");
-            const edit = `
-              <td><div class="form-group text-left">
-                <label for="color-stock">สี</label>
-                <input
-                  class="color form-control"
-                  name="color"
-                  id="p_id-${index}"
-                  value="${ele.p_id}"
-                />
-              </div></td>
-              <td><div class="form-group text-left">
-                <label for="color-stock">จำนวน</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  name="amount_stock"
-                  id="amount_use-${index}"
-                  value="${ele.amount_use}"
-                />
-              </div></td>
-            `;
-            trEdit.innerHTML = edit;
-            trEdit.appendChild(tdCorrect);
-            trEdit.appendChild(tdDeleteEdit);
+                    tr.innerHTML = listData;
+                    tdEdit.innerHTML = editButton;
+                    tdDelete.innerHTML = deleteButton;
+                    tr.appendChild(tdEdit);
+                    tr.appendChild(tdDelete);
 
-            printPatternTbody.appendChild(tr);
+                    tdCorrect.innerHTML = correctButon;
+                    tdDeleteEdit.innerHTML = deleteButton;
+                    const trEdit = document.createElement("tr");
+                    const edit = `
+                    <td><div class="form-group text-left">
+                        <label for="color-stock">สี</label>
+                        <input
+                        class="color form-control"
+                        name="color"
+                        id="p_id-${index}"
+                        value="${ele.p_id}"
+                        />
+                    </div></td>
+                    <td><div class="form-group text-left">
+                        <label for="color-stock">จำนวน</label>
+                        <input
+                        type="number"
+                        class="form-control"
+                        name="amount_stock"
+                        id="amount_use-${index}"
+                        value="${ele.amount_use}"
+                        />
+                    </div></td>
+                    `;
+                    trEdit.innerHTML = edit;
+                    trEdit.appendChild(tdCorrect);
+                    trEdit.appendChild(tdDeleteEdit);
 
-            printPatternTbody.appendChild(trEdit);
-            trEdit.setAttribute("style", "display:none;");
+                    printPatternTbody.appendChild(tr);
 
-            tdEdit.addEventListener("click", (e) => {
-                trEdit.removeAttribute("style");
-                trEdit.className = "bg-info";
-                tr.setAttribute("style", "display:none;");
-
-                tdCorrect.addEventListener("click", (e) => {
-                    tr.removeAttribute("style");
-                    const p_idEdit = document.getElementById(`p_id-${index}`);
-                    const amount_useEdit = document.getElementById(
-                        `amount_use-${index}`
-                    );
-                    let objEdit = {};
-                    objEdit[p_idEdit.name] = p_idEdit.value;
-                    objEdit[amount_useEdit.name] = amount_useEdit.value;
-                    console.log(objEdit);
-                    // fetch update?          
+                    printPatternTbody.appendChild(trEdit);
                     trEdit.setAttribute("style", "display:none;");
+
+                    tdEdit.addEventListener("click", (e) => {
+                        trEdit.removeAttribute("style");
+                        trEdit.className = "bg-info";
+                        tr.setAttribute("style", "display:none;");
+
+                        tdCorrect.addEventListener("click", (e) => {
+                            tr.removeAttribute("style");
+                            const p_idEdit = document.getElementById(`p_id-${index}`);
+                            const amount_useEdit = document.getElementById(
+                                `amount_use-${index}`
+                            );
+                            let objEdit = {};
+                            objEdit[p_idEdit.name] = p_idEdit.value;
+                            objEdit[amount_useEdit.name] = amount_useEdit.value;
+                            console.log(objEdit);
+                            // fetch update?          
+                            trEdit.setAttribute("style", "display:none;");
+                        });
+                    });
+
+                    tdDelete.addEventListener("click", (e) => {
+                        const deleteItem = confirm(
+                            `คุณต้องการลบข้อมูลรหัส ${ele.p_id} และจำนวนที่ใช้ ${ele.amount_use} ใช่มั้ย`
+                        );
+                        if (deleteItem == true) {
+                            // fetch delete?
+                            alert("ลบเรียบร้อยแล้ว");
+                        }
+                    });
                 });
             });
-
-            tdDelete.addEventListener("click", (e) => {
-                const deleteItem = confirm(
-                    `คุณต้องการลบข้อมูลรหัส ${ele.p_id} และจำนวนที่ใช้ ${ele.amount_use} ใช่มั้ย`
-                );
-                if (deleteItem == true) {
-                    // fetch delete?
-                    alert("ลบเรียบร้อยแล้ว");
-                }
-            });
-        });
     };
+    showTbody();
 
     showSearch.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -327,24 +335,29 @@
         }
         delete objInsert[""];
         console.log(objInsert);
-        // searchFetch(objSearch);
+        insertFetch(objInsert);
     })
 
     function insertFetch(objInsert) {
-        // fetch insert
+        fetch("http://localhost:3000/printPattern/insert", {
+                method: "POST",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(objInsert),
+            })
+            .then((res) => {
+                return res.json();
+            })
+            .then((data) => {
+                console.log(data);
+                showTbody(data);
+            })
+            .catch((err) => {
+                console.log(err.message);
+            });
     }
-
-    fetch("http://localhost:3000/printPattern")
-        .then((res) => {
-            return res.json();
-        })
-        .then((data) => {
-            console.log(data);
-            showTbody(data);
-        })
-        .catch((err) => {
-            console.log(err.message);
-        });
 </script>
 
 </html>
