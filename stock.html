@@ -196,103 +196,104 @@
 
     const showTbody = (data) => {
         // เพิ่มนี้นะ นะ
-        stockTbody.innerHTML = "";
+        fetch("http://localhost:3000/stock")
+            .then((res) => {
+                return res.json();
+            })
+            .then((data) => {
+                stockTbody.innerHTML = "";
 
-        data.forEach((ele, index) => {
-            const tr = document.createElement("tr");
-            const tdDelete = document.createElement("td");
-            const tdEdit = document.createElement("td");
-            const tdCorrect = document.createElement("td");
-            const tdDeleteEdit = document.createElement("td");
+                data.forEach((ele, index) => {
+                    const tr = document.createElement("tr");
+                    const tdDelete = document.createElement("td");
+                    const tdEdit = document.createElement("td");
+                    const tdCorrect = document.createElement("td");
+                    const tdDeleteEdit = document.createElement("td");
 
 
-            const listData = `<th scope="row">${ele.color}</th>
-                        <td>${ele.amount_stock}</td>`;
+                    const listData = `<th scope="row">${ele.color}</th>
+                <td>${ele.amount_stock}</td>`;
 
-            tr.innerHTML = listData;
-            tdEdit.innerHTML = editButton;
-            tdDelete.innerHTML = deleteButton;
+                    tr.innerHTML = listData;
+                    tdEdit.innerHTML = editButton;
+                    tdDelete.innerHTML = deleteButton;
 
-            tr.appendChild(tdEdit);
-            tr.appendChild(tdDelete);
+                    tr.appendChild(tdEdit);
+                    tr.appendChild(tdDelete);
 
-            tdCorrect.innerHTML = correctButon;
-            tdDeleteEdit.innerHTML = deleteButton;
-            const trEdit = document.createElement("tr");
+                    tdCorrect.innerHTML = correctButon;
+                    tdDeleteEdit.innerHTML = deleteButton;
+                    const trEdit = document.createElement("tr");
 
-            const edit = `
-              <td><div class="form-group text-left">
-                <label for="color-stock">สี</label>
-                <input
-                  class="color form-control"
-                  name="color"
-                  id="color-${index}"
-                  value="${ele.color}"
-                />
-              </div></td>
-              <td><div class="form-group text-left">
-                <label for="color-stock">จำนวน</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  name="amount_stock"
-                  id="amount_stock-${index}"
-                  value="${ele.amount_stock}"
-                />
-              </div></td>
-            `;
+                    const edit = `
+      <td><div class="form-group text-left">
+        <label for="color-stock">สี</label>
+        <input
+          class="color form-control"
+          name="color"
+          id="color-${index}"
+          value="${ele.color}"
+        />
+      </div></td>
+      <td><div class="form-group text-left">
+        <label for="color-stock">จำนวน</label>
+        <input
+          type="number"
+          class="form-control"
+          name="amount_stock"
+          id="amount_stock-${index}"
+          value="${ele.amount_stock}"
+        />
+      </div></td>
+    `;
 
-            trEdit.innerHTML = edit;
-            trEdit.appendChild(tdCorrect);
-            trEdit.appendChild(tdDeleteEdit);
+                    trEdit.innerHTML = edit;
+                    trEdit.appendChild(tdCorrect);
+                    trEdit.appendChild(tdDeleteEdit);
 
-            stockTbody.appendChild(tr);
+                    stockTbody.appendChild(tr);
 
-            stockTbody.appendChild(trEdit);
-            trEdit.setAttribute("style", "display:none;");
-
-            tdEdit.addEventListener("click", (e) => {
-                trEdit.removeAttribute("style");
-                trEdit.className = "bg-info";
-                tr.setAttribute("style", "display:none;");
-
-                tdCorrect.addEventListener("click", (e) => {
-                    tr.removeAttribute("style");
-                    const colorEdit = document.getElementById(`color-${index}`);
-                    const amountStockEdit = document.getElementById(
-                        `amount_stock-${index}`
-                    );
-                    let objEdit = {};
-                    objEdit[colorEdit.name] = colorEdit.value;
-                    objEdit[amountStockEdit.name] = amountStockEdit.value;
-                    console.log(objEdit);
-                    // fetch update?          
+                    stockTbody.appendChild(trEdit);
                     trEdit.setAttribute("style", "display:none;");
+
+                    tdEdit.addEventListener("click", (e) => {
+                        trEdit.removeAttribute("style");
+                        trEdit.className = "bg-info";
+                        tr.setAttribute("style", "display:none;");
+
+                        tdCorrect.addEventListener("click", (e) => {
+                            tr.removeAttribute("style");
+                            const colorEdit = document.getElementById(`color-${index}`);
+                            const amountStockEdit = document.getElementById(
+                                `amount_stock-${index}`
+                            );
+                            let objEdit = {};
+                            objEdit[colorEdit.name] = colorEdit.value;
+                            objEdit[amountStockEdit.name] = amountStockEdit.value;
+                            console.log(objEdit);
+                            // fetch update?          
+                            trEdit.setAttribute("style", "display:none;");
+                        });
+                    });
+
+                    tdDelete.addEventListener("click", (e) => {
+                        const deleteItem = confirm(
+                            `คุณต้องการลบข้อมูลสี ${ele.color} และจำนวน ${ele.amount_stock} ใช่มั้ย`
+                        );
+                        if (deleteItem == true) {
+                            // fetch delete?
+                            alert("ลบเรียบร้อยแล้ว");
+                        }
+                    });
                 });
+            })
+            .catch((err) => {
+                console.log(err.message);
             });
 
-            tdDelete.addEventListener("click", (e) => {
-                const deleteItem = confirm(
-                    `คุณต้องการลบข้อมูลสี ${ele.color} และจำนวน ${ele.amount_stock} ใช่มั้ย`
-                );
-                if (deleteItem == true) {
-                    // fetch delete?
-                    alert("ลบเรียบร้อยแล้ว");
-                }
-            });
-        });
+
     };
-
-    fetch("http://localhost:3000/stock")
-        .then((res) => {
-            return res.json();
-        })
-        .then((data) => {
-            showTbody(data);
-        })
-        .catch((err) => {
-            console.log(err.message);
-        });
+    showTbody();
 
     // Search เอาค่าที่อยู่ใน form มาก่อน
     showSearch.addEventListener("submit", (e) => {
@@ -344,11 +345,28 @@
         }
         delete objInsert[""];
         console.log(objInsert);
-        // searchFetch(objSearch);
+        insertFetch(objInsert)
     })
 
     function insertFetch(objInsert) {
-        // fetch insert
+        fetch("http://localhost:3000/stock/insert", {
+                method: "POST",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(objInsert),
+            })
+            .then((res) => {
+                return res.json();
+            })
+            .then((data) => {
+                console.log(data);
+                showTbody(data);
+            })
+            .catch((err) => {
+                console.log(err.message);
+            });
     }
 </script>
 

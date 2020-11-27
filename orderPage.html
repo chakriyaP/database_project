@@ -120,6 +120,12 @@
                                     <input type="date" class="form-control" name="o_end_date" id="purchaseDate">
                                 </div>
                             </th>
+                            <th>
+                                <div class="form-group text-left">
+                                    <label for="s_type">ลักษณะ</label>
+                                    <input class="form-control" name="s_type" id="s_type" placeholder="ทั้งหมด">
+                                </div>
+                            </th>
                         </tr>
                     </thead>
                 </table>
@@ -193,6 +199,12 @@
                                     <input type="date" name="o_end_date" class="form-control" id="purchaseDate-insert">
                                 </div>
                             </th>
+                            <th>
+                                <div class="form-group text-left">
+                                    <label for="s_type-insert">ลักษณะ</label>
+                                    <input name="s_type" class="form-control" id="s_type-insert" placeholder="ทั้งหมด">
+                                </div>
+                            </th>
                         </tr>
                     </thead>
                 </table>
@@ -223,6 +235,7 @@
                         <th scope="col">ลายสกรีนผ้า</th>
                         <th scope="col">วันที่สั่งสินค้า</th>
                         <th scope="col">วันที่ส่งสินค้า</th>
+                        <th scope="col">ลักษณะ</th>
                         <th scope="col">แก้ไข</th>
                         <th scope="col">ลบ</th>
                     </tr>
@@ -286,10 +299,11 @@
                         <td>${ele.ocid}</td>
                         <td>${ele.order_amount}</td>
                         <td>${ele.size}</td>
-                        <td>${ele.bcolor}</td>
+                        <td>${ele.ocolor}</td>
                         <td>${ele.opid}</td>
                         <td>${ele.o_start_date}</td>
-                        <td>${ele.o_end_date}</td>`
+                        <td>${ele.o_end_date}</td>
+                        <td>${ele.s_type}</td>`
             tr.innerHTML = listData
             tdEdit.innerHTML = editButton;
             tdDelete.innerHTML = deleteButton;
@@ -343,7 +357,7 @@
                   class="form-control"
                   name="bcolor"
                   id="bcolor-${index}"
-                  value="${ele.bcolor}"
+                  value="${ele.ocolor}"
                 />
               </div></td>
               <td><div class="form-group text-left">
@@ -372,7 +386,14 @@
                   id="o_end_date-${index}"
                   value="${ele.o_end_date}"
                 />
-             
+                <td><div class="form-group text-left">
+                <label>ลักษณะ</label>
+                <input
+                  class="form-control"
+                  name="o_end_date"
+                  id="o_end_date-${index}"
+                  value="${ele.s_type}"
+                />
             `;
 
 
