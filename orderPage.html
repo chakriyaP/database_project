@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>รายการการสั่งซื้อสินค้า</title>
+    <title>รายการสั่งซื้อสินค้า</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
@@ -24,7 +24,7 @@
 
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="./orderPage.html">รายการการสั่งซื้อ <span
+                    <a class="nav-link" href="./orderPage.html">รายการสั่งซื้อ <span
                             class="sr-only">(current)</span></a>
                 </li>
 
@@ -223,7 +223,7 @@
             </form>
         </div>
         <div class="card-body container-fluid bg-white d-flex flex-column justify-content-center align-items-center">
-            <h4 class="container-fluid font-weight-bold border-bottom ">รายการการสั่งซื้อสินค้า</h4>
+            <h4 class="container-fluid font-weight-bold border-bottom ">รายการสั่งซื้อสินค้า</h4>
             <table class="table  bg-light text-center shadow-lg mt-2" id="orders-table">
                 <thead class="thead-dark">
                     <tr>
@@ -301,8 +301,8 @@
                         <td>${ele.size}</td>
                         <td>${ele.ocolor}</td>
                         <td>${ele.opid}</td>
-                        <td>${ele.o_start_date}</td>
-                        <td>${ele.o_end_date}</td>
+                        <td>${ele.o_start_date.slice(0, 10)}</td>
+                        <td>${ele.o_end_date.slice(0, 10)}</td>
                         <td>${ele.s_type}</td>`
             tr.innerHTML = listData
             tdEdit.innerHTML = editButton;
@@ -375,7 +375,7 @@
                   class="form-control"
                   name="o_start_date"
                   id="o_start_date-${index}"
-                  value="${ele.o_start_date}"
+                  value="${ele.o_start_date.slice(0, 10)}"
                 />
               </div></td>
               <td><div class="form-group text-left">
@@ -384,7 +384,7 @@
                   class="form-control"
                   name="o_end_date"
                   id="o_end_date-${index}"
-                  value="${ele.o_end_date}"
+                  value="${ele.o_end_date.slice(0, 10)}"
                 />
                 <td><div class="form-group text-left">
                 <label>ลักษณะ</label>
